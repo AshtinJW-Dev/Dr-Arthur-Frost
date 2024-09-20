@@ -83,7 +83,7 @@ const Timeline = () => {
 
   return (
     <div className='container'>
-      <div className=" mt-5">
+      <div className="mt-5">
         {bodyData.About && (
           <div className="body-section text-center">
             <div className='hero'>
@@ -118,20 +118,25 @@ const Timeline = () => {
                         onError={(e) => { e.target.src = placeholderImage; }} // Add onError here
                       />
                       <div className="card-body">
-                     <div className='d-flex flex-row'>
-                        <img
-                          src={`https://arthurfrost.qflo.co.za/${item.Icon}`}
-                          alt={item.Icon}
-                          className="img-icon"
-                          onError={(e) => { e.target.src = placeholderImage; }} 
-                        />
+                        <div className='d-flex flex-row'>
+                          <img
+                            src={`https://arthurfrost.qflo.co.za/${item.Icon}`}
+                            alt={item.Icon}
+                            className="img-icon"
+                            onError={(e) => { e.target.src = placeholderImage; }}
+                          />
                           <div>
                             <h5 className="card-title">{item.Title}</h5>
                             <p className="card-text">{item.Episode}</p>
+
                           </div>
-                     </div>
-                        
+
+                        </div>
+
                       </div>
+                      <iframe title="youtube" loading='lazy'
+                        src={`https://www.youtube.com/embed/${item.RemoteId}`}>
+                      </iframe>
                       <div className="card-footer">
                         <button
                           className="btn btn-outline-secondary w-100"
